@@ -1,3 +1,13 @@
-const math = require("./math")
-console.log(math.add(2,3));
-console.log(math.subtract(2,3));
+//Callback function
+function greet (name) {
+    console.log("hello ", name);
+}
+
+//High order function
+function highOrderFunction (Callback) {
+    const name = "vishwas"
+    greetFn(name);
+}
+
+
+greetVishwas(greet);
