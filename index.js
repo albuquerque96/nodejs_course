@@ -1,8 +1,32 @@
-const buffer = new Buffer.from("Vishwas");//UTF-8 encoding by default
+const fs = require("node:fs");
 
 
-buffer.write("code")//buffer still contains info related to previous data 
-//buffer.write("Code Evolution")//bigger than buffer capacity extra carachters discarded
-console.log(buffer.toString());
-console.log(buffer);//hexadecimal representation of binary data 
-console.log(buffer.toJSON());//decimal representation of binary data 
+console.log("First");
+const fileContents = fs.readFileSync("./file.txt","utf-8")
+console.log(fileContents);
+
+console.log("Second");
+//eror first callback pattern 
+fs.readFile("file.txt","utf-8",(error,data) => {
+if (error) {
+    console.log(error);
+}
+else {
+    console.log(data);
+}
+})
+
+console.log("Third");
+
+fs.writeFileSync("./greet.txt", "hello world");
+
+fs.writeFile("./greet.txt","\nhello vishwas",{flag:'a'},(error)=>{
+    if (error) {
+        console.log(error);
+    }
+    else{
+        console.log("data writen to the file");
+    }
+    
+}
+)
