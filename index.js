@@ -1,13 +1,4 @@
-const EventEmmiter = require("node:events")
+const buffer = new Buffer.from("Vishwas");//UTF-8 encoding by default
 
-const emmiter = new EventEmmiter({})
-
-emmiter.on("order-pizza",(size,topping)=>{
-    console.log(`Order received! baking a ${size} pizza with ${topping}`)
-})
-emmiter.on("order-pizza",(size)=>{
-    console.log("Serving complementary drink");
-})
-
-console.log("do work before event ocurs in the system!");
-emmiter.emit("order-pizza","large","mushrooms")
+console.log(buffer);//hexadecimal representation of binary data 
+console.log(buffer.toJSON());//decimal representation of binary data 
