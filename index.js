@@ -1,4 +1,18 @@
-const fs = require("node:fs");
+const fs = require("node:fs/promises")
+
+async function readFile() {
+    try {
+        const data = await fs.readFile("file.txt", "utf8")
+        console.log(data);
+    } catch (error) {
+        console.log(error);
+    }
+
+}
+
+readFile()
+
+/*const fs = require("node:fs");
 
 
 console.log("First");
@@ -29,4 +43,4 @@ fs.writeFile("./greet.txt","\nhello vishwas",{flag:'a'},(error)=>{
     }
     
 }
-)
+)*/
